@@ -1,0 +1,12 @@
+{
+  "up_since": "Fri Jul 24 2020 19:42:50 GMT+0530 (India Standard Time)",
+  "images": {
+    "processed_images": "3",
+    "raw_images": "3"
+  },
+  "request": {
+    "total_requests": "2",
+    "new_hits": "0",
+    "cache_hits": "2"
+  }
+}

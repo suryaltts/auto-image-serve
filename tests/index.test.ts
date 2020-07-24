@@ -1,6 +1,6 @@
 'use strict';
 
-import Main, {server} from '../src/index';
+import server from '../src/index';
 import {expect} from 'chai';
 import {agent as request} from 'supertest';
 import sizeOf from 'buffer-image-size';
@@ -21,7 +21,7 @@ describe('Image Processing Server Tests', () => {
         request(server)
             .get('/')
             .then((res) => {
-                expect(res.text).equal('Welcome to the Dynamic Image Generator!');
+                expect(res.text).equal('Incomplete Request. Please include images details to process');
                 done()
             })
     });
@@ -30,7 +30,8 @@ describe('Image Processing Server Tests', () => {
         request(server)
             .get('/test')
             .then((res) => {
-                expect(res.status).equal(404);
+                expect(res.status).equal(200);
+                expect(res.text).equal('Incomplete Request. Please include images details to process');
                 done()
             })
     });
