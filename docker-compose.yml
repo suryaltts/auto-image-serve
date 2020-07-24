@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  imageprocessserver:
+    build: ./
+    image: typescript-docker-koa
+    restart: always
+    volumes: &appvolumes
+      - ./:/app:delegated
+    ports:
+      - '3000:3000'
+    environment: &appenv
+      PORT: 3000
